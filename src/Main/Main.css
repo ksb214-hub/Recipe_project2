@@ -39,9 +39,9 @@
 }
 /* MAIN */
 .con {
-  margin: 0 auto;
   width: 100%;
-  padding-top: 25%;
+  position: absolute;
+  top: 10%;
 }
 
 #tab{
