@@ -77,20 +77,19 @@
 }
 
 .find_text {
-  color: white;
-  background-color: black;
+  color: #888;
   padding: 5px 10px;
   text-decoration: none;
 }
 
-/* 🔥 반응형 (핵심 요구사항) */
+/* 반응형 (핵심 요구사항) */
 @media (max-width: 768px) {
   .login_form {
     width: 90%;
   }
 
   .find_id {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
 }
