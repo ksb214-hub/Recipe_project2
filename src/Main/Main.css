@@ -38,7 +38,7 @@
   opacity: 0.8;
 }
 
-/* 🔥 반응형 */
+/*  반응형 */
 @media only screen and (max-width: 833px) {
   .zero-naeng-fe_nav {
     display: flex;
