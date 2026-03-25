@@ -79,36 +79,42 @@ css
 1. 반응형 웹: 반응형을 사용하여 웹페이지  화면 크기와 해상도에서 
 잘 렌더링되도록 한다.
 
+변경사항 
+	요구사항 완벽 체크
 
-요구사항 완벽 체크
+	nav / main / footer 구조
 
-nav / main / footer 구조
+	nav
+		• width 100%
+		•	height 0
+		•	좌측 “zero-naeng-fe”
 
-nav
-    • width 100%
-	•	height 0
-	•	좌측 “zero-naeng-fe”
+	main
+		•	login_form
+		•	login_box
+		•	btn_login
 
-main
-	•	login_form
-	•	login_box
-	•	btn_login
+	input
+		•	id=“input-id”
+		•	id=“input-password”
+		•	name=“password”
 
-input
-	•	id=“input-id”
-	•	id=“input-password”
-	•	name=“password”
+	로그인 버튼
+		•	type=“submit”
+		•	name=“login-button”
+		•	가운데 정렬
+		•	hover 효과
 
-로그인 버튼
-	•	type=“submit”
-	•	name=“login-button”
-	•	가운데 정렬
-	•	hover 효과
+	footer
+		•	ul class=“find_id”
+		•	a 태그 3개
+		•	id: pwinquiry / idinquiry / join
+		•	class: find_text
 
-✔ footer
-	•	ul class=“find_id”
-	•	a 태그 3개
-	•	id: pwinquiry / idinquiry / join
-	•	class: find_text
-
-✔ 반응형 웹 (media query 적용)
+	반응형 웹 
+	media(Login.css) 
+		• find_id
+			flex-direction: row 변경
+	
+	.find_text(Login.css) 
+		• color: #888 변경	
