@@ -37,6 +37,39 @@
 .zero-naeng-fe_search {
   opacity: 0.8;
 }
+/* MAIN */
+.con {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 20px;
+}
+
+/* TAB */
+#tab ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* li 기본 */
+#tab li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+/* 링크 */
+#tab a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  display: block;
+}
+
+/* 선택된 탭 */
+#tab .on a {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
 
 /*  반응형 */
 @media only screen and (max-width: 833px) {
