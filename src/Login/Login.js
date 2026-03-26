@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
+import { Link } from "react-router-dom"; // 🔥 추가
 
 function Login() {
   const [id, setId] = useState("");
@@ -12,14 +13,15 @@ function Login() {
 
   return (
     <div className="container">
-      {/* 🔹 NAV */}
+      {/* NAV */}
       <nav className="nav">
-        <a href="/" className="logo">
+        {/* 🔥 a → Link 변경 */}
+        <Link to="/" className="logo">
           zero-naeng-fe
-        </a>
+        </Link>
       </nav>
 
-      {/* 🔹 MAIN */}
+      {/* MAIN */}
       <main className="main">
         <div className="login_form">
           <form onSubmit={handleSubmit}>
@@ -57,24 +59,43 @@ function Login() {
         </div>
       </main>
 
-      {/* 🔹 FOOTER */}
+      {/* FOOTER */}
       <footer className="footer">
         <ul className="find_id">
+          
+          {/* 🔥 아이디 찾기 */}
           <li>
-            <a id="pwinquiry" className="find_text" href="#">
+            <Link
+              to="/find-id"
+              id="pwinquiry"
+              className="find_text"
+            >
               아이디 찾기
-            </a>
+            </Link>
           </li>
+
+          {/* 🔥 비밀번호 찾기 */}
           <li>
-            <a id="idinquiry" className="find_text" href="#">
+            <Link
+              to="/find-pw"
+              id="idinquiry"
+              className="find_text"
+            >
               비밀번호 찾기
-            </a>
+            </Link>
           </li>
+
+          {/* 🔥 회원가입 */}
           <li>
-            <a id="join" className="find_text" href="#">
+            <Link
+              to="/signup"
+              id="join"
+              className="find_text"
+            >
               회원가입
-            </a>
+            </Link>
           </li>
+
         </ul>
       </footer>
     </div>

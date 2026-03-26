@@ -1,0 +1,175 @@
+/* 전체 배경 */
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+header {
+  background: black;
+  width: 100%;
+  height: 60px;
+}
+
+header nav {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* 내부 컨테이너 */
+.inner {
+  width: 100%;
+}
+
+/* 로고 영역 */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* zero-naeng-fe */
+.logo h1 a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 로그인 */
+.name a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* ================= MAIN ================= */
+main {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* 제목 */
+.main_title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+}
+
+/* 설명 영역 */
+.description {
+  display: inline-flex;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+.description button {
+  line-height: inherit;
+  display: inline-block;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.description button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* span */
+.margin-right {
+  margin-right: 2px;
+}
+
+/* ================= INPUT ================= */
+.Label-input {
+  overflow: hidden;
+  position: relative;
+  margin-top: 24px;
+}
+
+/* input wrapper */
+.Label-input_in {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+/* label */
+.label {
+  position: absolute;
+  padding: 0 15px;
+  color: #cdcdcd;
+  font-size: 17px;
+  pointer-events: none;
+}
+
+/* input */
+.email_input {
+  flex: 1;
+  width: 100%;
+  height: 69px;
+  padding: 32px 16px 15px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* ================= BUTTON ================= */
+.form-main-button {
+  margin-top: 20px;
+}
+
+/* 다음 버튼 */
+.Button-button {
+  width: 100%;
+  font-weight: 600;
+  height: 45px;
+  font-size: 15px;
+  background: #05AC4F;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+}
+
+/* hover */
+.Button-button:hover {
+  background: #049944;
+}
+
+.Button-button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  height: 40px;
+}
+
+/* ================= 반응형 ================= */
+@media (max-width: 768px) {
+  main {
+    margin: 60px auto;
+  }
+
+  .main_title {
+    font-size: 20px;
+  }
+
+  .email_input {
+    height: 60px;
+  }
+}
