@@ -13,19 +13,28 @@
   padding: 0 24px; /* 🔥 내부 여백 */
 }
 
-/* 🔹 ul 정렬 */
 .zero-naeng-fe_nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  width: 100%;
   align-items: center;
+  width: 100%;
+  list-style: none;
 }
+
+/* 🔥 핵심 */
 .nav_right {
   margin-left: auto;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+}
+
+/* 버튼 스타일 */
+#tab button {
+  width: 100%;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* 🔹 공통 링크 */

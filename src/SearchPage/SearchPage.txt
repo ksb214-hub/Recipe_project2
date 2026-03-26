@@ -1,0 +1,119 @@
+구조 
+src/
+│   
+├─ Login/
+│   └─ find_id/
+│      └─ find_id.js
+│   └─ Login.js
+├─ App.js
+├─ Main/
+│    └─ Main.js
+├─ SearchPage/
+    └─ SearchPage.js
+       
+
+목적: 메인 화면에 검색 버튼 클릭시 검색화면을 만드는 것을 목표로 한다.
+사용언어: react를 사용하고 언어는 js를 사용한다.
+
+전체 흐름도
+    사용자 진입
+        ↓
+    검색어 입력 or 카테고리 선택
+        ↓
+    handleSearch 실행
+        ↓
+    검색 조건 상태 업데이트
+        ↓
+    필터 적용 (카테고리 / 난이도)
+        ↓
+    recipeResults 필터링
+        ↓
+    검색 결과 렌더링
+        ↓
+    사이드바 (인기 레시피 / 최근 검색) 표시
+
+
+기능 중심 흐름 (더 자세한 구조)
+    [초기 화면]
+        ↓
+    추천 레시피 / 기본 리스트 표시
+
+    [사용자 행동]
+        ↓
+    1. 검색 입력
+    2. 카테고리 클릭
+    3. 난이도 선택
+
+        ↓
+    [상태 변경]
+    - searchQuery 변경
+    - selectedCategory 변경
+    - selectedDifficulty 변경
+
+        ↓
+    [데이터 처리]
+        조건에 맞는 레시피 필터링
+
+        ↓
+    [UI 업데이트]
+    - 검색 결과 리스트 렌더링
+    - 선택된 필터 active 표시
+    - 최근 검색 업데이트
+
+        ↓
+    [사이드바]
+    - 인기 레시피 표시
+    - 최근 검색 표시
+
+핵심 데이터 흐름 
+
+    input → state (searchQuery)
+        ↓
+    handleSearch
+        ↓
+    조건 저장 (category, difficulty)
+        ↓
+    filter()
+        ↓
+    recipeResults 변경
+        ↓
+    UI 자동 렌더링
+
+1. header
+    style
+        background: black;
+    nav
+        style
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+        div
+            class =  "inner";  
+        
+            style
+                padding: 0 24px;
+
+            div
+                class = "logo"
+                
+                style 
+                    display: flex; 
+                    align-items: center;
+                
+                h1
+                    a
+                        href = Main.js;
+                        style
+                            color: inherit;
+                            text_decoration: none;
+                        
+                        zero-naeng-fe
+
+
+
+에러 
+Module not found: Can't resolve 'lucide-react'
+lucide-react라는 아이콘 라이브러리를 import 했는데
+👉 설치가 안 되어 있음

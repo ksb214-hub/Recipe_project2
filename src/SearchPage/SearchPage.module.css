@@ -1,0 +1,111 @@
+/* SearchPage.module.css */
+
+/* 전체 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+/* 상단 검색 영역 */
+.searchArea {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+/* 아이콘 + 제목 */
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: black;
+
+}
+
+.titleWrapper h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* 검색폼 */
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+}
+
+.searchWrapper input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+/* 검색 버튼 */
+.searchBtn {
+  background-color: #05ac4f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+svg.lucide.lucide-search{
+    color: #757575;
+}
+/* 카테고리 버튼 */
+.categoryContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.categoryBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.categoryBtn.active {
+  background-color: #05ac4f;
+  color: white;
+}
+
+/* 검색 결과 */
+.resultItem {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resultItem h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.resultItem p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.resultItem span {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
