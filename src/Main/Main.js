@@ -10,26 +10,28 @@ function Main() {
       {/* NAV */}
       <nav className="zero-naeng-fe_nav">
         <ul>
-          {/* 로고 */}
-          <li>
-            <Link className="zero-naeng-fe_link" to="/">
-              zero-naeng-fe
-            </Link>
-          </li>
+          {/* 왼쪽 */}
+          <div className="nav_left">
+            <li>
+              <Link className="zero-naeng-fe_link" to="/">
+                zero-naeng-fe
+              </Link>
+            </li>
+          </div>
 
-          {/* 로그인 */}
-          <li>
-            <Link className="zero-naeng-fe_login_btn" to="/login">
-              로그인
-            </Link>
-          </li>
-
-          {/* 검색 */}
-          <li>
-            <Link className="zero-naeng-fe_search" to="/search">
-              검색
-            </Link>
-          </li>
+          {/* 오른쪽 */}
+          <div className="nav_right">
+            <li>
+              <Link className="zero-naeng-fe_login_btn" to="/login">
+                로그인
+              </Link>
+            </li>
+            <li>
+              <Link className="zero-naeng-fe_search" to="/search">
+                검색
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
 
