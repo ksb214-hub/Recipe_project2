@@ -78,40 +78,121 @@ src/
     recipeResults 변경
         ↓
     UI 자동 렌더링
+container
+    css 
+        width: 100%;
+        margin: 0 auto;
+    
+웹 구조 
+div (전체 컨테이너)
+  className = styles.container
 
-1. header
+  1. header (헤더 영역)
+  2. div (검색 영역)
+  3. div (검색 결과 영역)
+
+div (전체)
+  className = styles.container
+
+  header
     style
         background: black;
+        padding: 0 1.5rem;
+        width: 100%;
+        height: 10vh;
+
     nav
+      style
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+
+      div (inner)
         style
-            padding: 0 24px;
+          padding: 0 24px;
+
+        div (logo)
+          style
             display: flex;
             align-items: center;
-            height: 100%;
 
-        div
-            class =  "inner";  
-        
-            style
-                padding: 0 24px;
+          h1
+            Link (to="/")
+              style
+                color: white;
+                text-decoration: none;
 
-            div
-                class = "logo"
-                
-                style 
-                    display: flex; 
-                    align-items: center;
-                
-                h1
-                    a
-                        href = Main.js;
-                        style
-                            color: inherit;
-                            text_decoration: none;
-                        
-                        zero-naeng-fe
+              zero-naeng-fe
 
+  div (검색 영역)
+    className = styles.searchArea
+    style
+      text-align: center;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
 
+    div (아이콘 + 제목)
+      className = styles.titleWrapper
+      style
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        color: black;
+
+      ChefHat 아이콘
+
+      h1
+        style
+          font-size: 2rem;
+          font-weight: 700;
+
+        레시피를 찾아보세요
+
+    form (검색폼)
+      className = styles.searchForm
+
+      div (input 영역)
+        className = styles.searchWrapper
+
+        Search 아이콘
+
+        input
+          type: text
+          value: searchQuery
+          placeholder: 재료나 요리 이름 입력
+
+      button (검색 버튼)
+        className = styles.searchBtn
+        type: submit
+
+        검색
+
+    div (카테고리 영역)
+      className = styles.categoryContainer
+
+      button (카테고리 반복)
+        className = styles.categoryBtn / active
+
+  div (검색 결과 영역)
+
+    조건
+      filteredRecipes.length === 0
+        → "검색 결과 없음"
+
+    반복
+      filteredRecipes.map()
+
+        div (카드)
+          className = styles.resultItem
+
+          h3 → 제목
+          p → 설명
+
+          span → 시간
+          span → 난이도
+          span → 인분  
 
 에러 
 Module not found: Can't resolve 'lucide-react'

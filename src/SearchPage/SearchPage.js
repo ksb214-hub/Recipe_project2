@@ -30,7 +30,7 @@ export default function SearchPage() {
     <div className={styles.container}>
       {/* HEADER */}
       <header style={{ background: "black", padding: "0 1.5rem" }}>
-        <nav style={{ display: "flex", alignItems: "center", height: "60px" }}>
+        <nav style={{ display: "flex", alignItems: "center"}}>
           <h1>
             <Link
               to="/"
