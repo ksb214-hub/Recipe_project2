@@ -1,0 +1,75 @@
+Card 컴포넌트 역할 (핵심 개념)
+    Card 컴포넌트 하나로 통일
+
+폴더 구조
+    src/
+    ├─ components/
+    │   └─ Card/
+    │       ├─ Card.js
+    │       └─ Card.css
+
+
+사용 방법 
+    메인 페이지
+        import Card from "../components/Card/Card";
+        {recipes.map((recipe) => (
+        <Card
+            key={recipe.id}
+            title={recipe.title}
+            image={recipe.image}
+            time={recipe.time}
+            difficulty={recipe.difficulty}
+            servings={recipe.servings}
+        />
+        ))}
+    
+    검색 페이지
+        {recipeResults.map((recipe) => (
+            <Card
+                key={recipe.id}
+                title={recipe.title}
+                description={recipe.description}
+                time={recipe.time}
+                difficulty={recipe.difficulty}
+                servings={recipe.servings}
+            />
+        ))}
+        
+데이터 흐름 (핵심🔥)
+    데이터 배열 (recipes)
+        ↓
+    map()
+        ↓
+    <Card props 전달>
+        ↓
+    Card 컴포넌트 렌더링
+        ↓
+    UI 출력
+
+구조 흐름 (DOM 구조)
+Card
+│
+├── div.card
+│     ├── div.card_thumb
+│     │     └── img
+│     │
+│     └── div.card_body
+│           ├── h3.card_title
+│           ├── p.card_desc (옵션)
+│           └── div.card_info
+│                 ├── span (time)
+│                 ├── span (difficulty)
+│                 └── span (servings)
+
+
+핵심 설계 포인트
+1️⃣ props 기반 설계
+    데이터만 바꾸면 UI 자동 변경
+2️⃣ 조건부 렌더링
+    필요할 때만 출력
+3️⃣ 재사용성
+    모든 페이지에서 동일 사용
+4️⃣ UI 일관성
+    디자인 시스템 유지
+
+데이터를 UI로 변환하는 컴포넌트

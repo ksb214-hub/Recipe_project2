@@ -52,3 +52,30 @@ Findpw (컴포넌트)
             │
             └── div.form-main-button
                   └── button.Button-button → 다음
+
+기능 구조 
+기능
+│
+├── 입력
+│     └── 아이디 입력
+│
+├── 제출
+│     └── handleSubmit()
+│           ↓
+│        비밀번호 재설정 요청
+│
+└── 결과
+      └── (추후)
+          ├── 이메일 인증
+          └── 비밀번호 변경 페이지 이동
+
+공통 UI 구조
+find-container
+ └── find-main
+      ├── title
+      ├── description
+      ├── form
+      │    ├── input
+      │    └── button
+      └── bottom-link
+

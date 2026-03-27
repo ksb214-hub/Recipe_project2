@@ -1,0 +1,72 @@
+1. Header 컴포넌트 역할
+지금 상태
+	Main에도 nav 있음
+	Login에도 nav 있음
+	Search에도 nav 있음
+
+문제
+	코드 중복
+	수정 시 전부 고쳐야 함
+
+
+2. 폴더 구조
+src/
+├─ components/
+│   └─ Header/
+│       ├─ Header.js
+│       └─ Header.css
+
+
+3. 사용 방법
+import Header from "../components/Header/Header";
+
+function Main() {
+  return (
+    <>
+      <Header />
+
+      <main className="con">
+        {/* 내용 */}
+      </main>
+    </>
+  );
+}
+
+
+4. 중요한 문제 해결
+문제: 헤더가 fixed라서 겹침
+해결
+    main {
+        margin-top: 60px;
+    }
+
+5. 구조 흐름
+App
+│
+├── Header (공통)
+│
+├── Page (Main / Login / Search)
+│     └── main
+│           └── 내용
+
+6. 데이터 흐름
+    사용자 클릭
+        ↓
+    Link
+        ↓
+    react-router
+        ↓
+    페이지 이동
+
+7. 핵심 설계 포인트
+1️⃣ 완전 분리
+    Header는 페이지랑 독립
+2️⃣ 재사용성
+    모든 페이지에서 사용
+3️⃣ 유지보수성
+    메뉴 수정 → Header만 수정
+4️⃣ 라우팅 통합
+    Link로 이동 관리
+
+Header는
+“모든 페이지를 연결하는 공통 네비게이션 컴포넌트”

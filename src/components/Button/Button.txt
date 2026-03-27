@@ -1,0 +1,39 @@
+Button 컴포넌트 역할 (핵심 개념)
+Button 컴포넌트 하나로 통일
+
+폴더 구조
+src/
+├─ components/
+│   └─ Button/
+│       ├─ Button.js
+│       └─ Button.css
+
+
+동작 흐름 (진짜 중요🔥)
+    사용자 클릭
+        ↓
+    <Button /> 컴포넌트 실행
+        ↓
+    props 확인
+        - variant (스타일)
+        - onClick (동작)
+        - type (submit 등)
+        ↓
+    CSS 클래스 적용
+        ↓
+    렌더링
+
+
+핵심 설계 포인트
+1️⃣ children 사용
+    버튼 텍스트 자유롭게 변경 가능
+2️⃣ variant 패턴
+    스타일 분기 = 디자인 시스템 핵심
+
+3️⃣ 재사용성
+    모든 페이지에서 동일하게 사용 가능
+
+확장 가능 구조 (다음 단계)
+    <Button size="large" />
+    <Button icon={<Search />} />
+    <Button loading />

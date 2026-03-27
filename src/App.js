@@ -1,20 +1,31 @@
 // src/App.js
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./Main/Main";
-import Login from "./Login/Login";
-import FindId from "./Login/find_id/find_id";
-import SearchPage from "./SearchPage/SearchPage";
+
+// 🔥 Layout (Header 포함)
+import Layout from "./layout/Layout";
+
+// 📄 Pages
+import Main from "./pages/Main/Main";
+import Login from "./pages/Login/Login";
+import SearchPage from "./pages/Search/SearchPage";
+import FindId from "./pages/Find/FindId/FindId";
+import FindPw from "./pages/Find/FindPw/FindPw";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/find-id" element={<FindId />} />
 
-        {/* 🔥 검색 페이지 추가 */}
-        <Route path="/search" element={<SearchPage />} />
+        {/* ================= 공통 Layout 적용 ================= */}
+        <Route path="/" element={<Layout><Main /></Layout>} />
+        <Route path="/login" element={<Layout><Login /></Layout>} />
+        <Route path="/search" element={<Layout><SearchPage /></Layout>} />
+        <Route path="/find-id" element={<Layout><FindId /></Layout>} />
+        <Route path="/find-pw" element={<Layout><FindPw /></Layout>} />
+
+        {/* ================= 404 ================= */}
+        <Route path="*" element={<div>404 Not Found</div>} />
+
       </Routes>
     </BrowserRouter>
   );

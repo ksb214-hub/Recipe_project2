@@ -1,0 +1,42 @@
+1. 폴더 구조
+src/
+└─ components/
+   └─ Input/
+      ├─ Input.js
+      └─ Input.css
+
+2. 사용 방법 (중요)
+    Login.js에서 사용
+        import Input from "../../components/Input/Input";
+
+        <Input
+        label="이메일"
+        type="text"
+        value={id}
+        onChange={(e) => setId(e.target.value)}
+        placeholder="이메일 입력"
+        />
+
+        <Input
+        label="비밀번호"
+        type="password"
+        value={pw}
+        onChange={(e) => setPw(e.target.value)}
+        placeholder="비밀번호 입력"
+        />
+    FindPw.js에서 사용
+        <Input
+        label="아이디"
+        value={id}
+        onChange={(e) => setId(e.target.value)}
+        placeholder="아이디 입력"
+        />
+
+3. 핵심 구조 
+    Input 컴포넌트
+        ↓
+    props로 데이터 받음
+        ↓
+    value / onChange 연결
+        ↓
+    부모 state와 연결됨
