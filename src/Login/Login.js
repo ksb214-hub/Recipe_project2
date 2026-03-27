@@ -76,11 +76,7 @@ function Login() {
 
           {/* 🔥 비밀번호 찾기 */}
           <li>
-            <Link
-              to="/find-pw"
-              id="idinquiry"
-              className="find_text"
-            >
+            <Link id="idinquiry" className="find_text" to="/find-pw">
               비밀번호 찾기
             </Link>
           </li>

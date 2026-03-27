@@ -44,7 +44,10 @@
   padding: 10px;
   font-size: 14px;
 }
-
+.login_box input:focus{
+  border-color: green;
+  outline: none;
+}
 /* 🔹 로그인 버튼 */
 .btn_login input {
   width: 100%;

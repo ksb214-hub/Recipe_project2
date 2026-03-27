@@ -1,15 +1,19 @@
 구조 
 src/
-│   
-├─ Login/
-│   └─ find_id/
-│      └─ find_id.js
-│   └─ Login.js
-├─ App.js
-├─ Main/
-│    └─ Main.js
-├─ SearchPage/
-    └─ SearchPage.js
+│
+├── App.js (Router)
+│
+├── Main/
+│   └── Main.js
+│
+├── Login/
+│   ├── Login.js
+│   └── find_id/
+│       └── find_id.js
+│
+├── SearchPage/
+│   ├── SearchPage.js
+│   └── SearchPage.module.css
        
 
 목적: 메인 화면에 검색 버튼 클릭시 검색화면을 만드는 것을 목표로 한다.

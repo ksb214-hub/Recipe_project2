@@ -1,16 +1,15 @@
 /* 🔹 NAV 기본 */
 .zero-naeng-fe_nav {
   width: 100%;
-  padding: 20px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🔥 핵심 수정 */
+  justify-content: space-between;
   background-color: #222;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  padding: 0 24px; /* 🔥 내부 여백 */
 }
 
 .zero-naeng-fe_nav ul {
@@ -20,31 +19,20 @@
   list-style: none;
 }
 
-/* 🔥 핵심 */
+/* 오른쪽 정렬 */
 .nav_right {
   margin-left: auto;
   display: flex;
   gap: 20px;
 }
 
-/* 버튼 스타일 */
-#tab button {
-  width: 100%;
-  padding: 12px 0;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* 🔹 공통 링크 */
+/* 링크 */
 .zero-naeng-fe_nav a {
   text-decoration: none;
   color: white;
   font-size: 16px;
 }
 
-/* 🔹 개별 */
 .zero-naeng-fe_link {
   font-weight: bold;
   font-size: 20px;
@@ -61,64 +49,119 @@
 }
 
 /* ================= MAIN ================= */
-
-/* 🔥 nav 높이만큼 내려주기 (핵심) */
 .con {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10vh; /* 🔥 중요 */
+  margin-top: 80px;
 }
 
-/* ================= TAB ================= */
-#tab {
-  width: 70%;
-  overflow: hidden;
-  margin-bottom: 1.688rem;
-  border: solid 1px #e5e5e5;
-  border-radius: 3.0625rem;
-}
-
-/* 🔥 중복 제거 */
-#tab ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-/* li */
-#tab li {
-  list-style: none;
-  flex: 1;
+/* 카테고리 */
+.home_cont_cate {
+  width: 1240px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 28px 0;
+  margin-bottom: 8px;
+  position: relative;
   text-align: center;
 }
 
-/* a */
-#tab a {
-  display: block;
-  padding: 12px 0;
+/* 타이틀 */
+.home_cont_cate h3 {
+  color: #000;
+  display: inline-block;
+  margin: 0;
+}
+
+.home_cont_cate h3 a {
+  color: #000;
   text-decoration: none;
-  color: gray;
 }
 
-/* 선택된 탭 */
-#tab .on a {
-  background-color: black;
-  color: gray;
-  border-radius: 3.0625rem;
+/* 리스트 */
+.slick-list {
+  margin-top: 20px;
 }
 
-/* ================= 반응형 ================= */
-@media only screen and (max-width: 833px) {
-  .zero-naeng-fe_nav {
-    padding: 0 12px;
+.slicklist {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  width: 1100px;
+  margin-left: 44px;
+  padding-left: 10px;
+}
+
+.slicklist::-webkit-scrollbar {
+  display: none;
+}
+
+.slick {
+  min-width: 150px;
+  list-style: none;
+}
+
+/* 카드 */
+.common_sp_link {
+  text-decoration: none;
+  color: #333;
+}
+
+.common_sp_thumb img {
+  width: 150px;
+  border-radius: 8px;
+}
+
+.common_sp_caption {
+  margin-top: 6px;
+}
+
+.common_sp_caption_tit {
+  font-size: 15px;
+}
+
+/* hover */
+.common_sp_link:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.common_sp_link:hover .common_sp_caption_tit {
+  color: #05ac4f;
+}
+
+/* 슬라이드 버튼 */
+.slide_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide_btn.left {
+  left: 10px;
+}
+
+.slide_btn.right {
+  right: 10px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .home_cont_cate {
+    width: 100%;
   }
 
-  .zero-naeng-fe_nav ul {
-    gap: 10px;
-  }
-
-  .zero-naeng-fe_nav a {
-    font-size: 14px;
+  .slicklist {
+    width: 100%;
+    margin-left: 0;
   }
 }
