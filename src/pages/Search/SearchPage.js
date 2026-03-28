@@ -1,6 +1,6 @@
 // src/pages/Search/SearchPage.js
 import React, { useState } from "react";
-import "./SearchPage.module.css";
+import "./SearchPage.css";
 import Card from "../../components/Card/Card";
 import { Search } from "lucide-react";
 
