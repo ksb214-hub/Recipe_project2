@@ -1,0 +1,102 @@
+공통 레이아웃을 관리하는 컴포넌트
+
+폴더 구조
+src/
+│
+├── App.js (Router)
+│
+├── Main/
+│   └── Main.js
+│
+├── Login/
+│   ├── Login.js
+│   └── find_id/
+│       └── find_id.js
+│
+├── SearchPage/
+│   ├── SearchPage.js
+│   └── SearchPage.css
+│
+└── layout/
+    └── Layout.js
+
+공통 UI 구조 관리
+    모든 페이지에서 반복되는 UI를 한 곳에서 관리한다.
+
+    Header
+    Main Content
+    Footer
+
+    이 중에서
+        👉 Header를 공통으로 출력한다.
+
+children의 의미
+    children은 Layout 안에 들어오는 페이지 컴포넌트를 의미한다.
+
+실제 렌더링 구조
+Layout
+│
+├── Header
+│
+└── main
+      └── children (페이지 내용)
+
+
+Fragment (<> </>) 역할
+    React Fragment는
+        👉 불필요한 div를 만들지 않기 위해 사용
+
+marginTop: “60px” 이유
+    Header가 보통
+        position: fixed;
+    로 고정되어 있기 때문에
+        👉 Header 높이만큼 공간을 확보해야 한다.
+    그래서
+        Header height = 60px
+    만큼 내려준다.
+
+
+전체 페이지 흐름
+App.js
+ │
+ ▼
+Layout
+ │
+ ├─ Header (공통 네비)
+ │
+ └─ main
+      │
+      ├─ Main 페이지
+      ├─ Login 페이지
+      ├─ Search 페이지
+      └─ Find 페이지
+
+
+Layout 패턴을 쓰는 이유
+    코드 중복 발생
+
+Layout 사용
+    Header → Layout에서 1번만 작성
+
+
+최종 화면 구조
+Browser
+ │
+ ▼
+Layout
+ │
+ ├── Header (공통 네비게이션)
+ │
+ └── main
+      │
+      ├── Main 페이지
+      ├── Login 페이지
+      ├── Search 페이지
+      ├── FindId 페이지
+      └── FindPw 페이지
+
+Layout.js 역할
+    1️⃣ Header 같은 공통 UI 관리
+    2️⃣ 페이지 콘텐츠(children) 출력
+    3️⃣ 전체 웹 페이지 기본 틀 제공
+    4️⃣ 코드 중복 제거
