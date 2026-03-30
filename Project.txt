@@ -1,0 +1,160 @@
+zero-naeng-fe 프로젝트
+
+전체 시스템 아키텍처
+    사용자 (Browser)
+            │
+            ▼
+    React Frontend
+            │
+            ▼
+    React Router
+            │
+            ▼
+    Layout (공통 구조)
+            │
+    ┌──────┴─────────┐
+    │                │
+    ▼                ▼
+    Header          Pages
+                    │
+            ┌─────────┼─────────┐
+            │         │         │
+            ▼         ▼         ▼
+        Main      Login    SearchPage
+                    │
+                    ▼
+                FindId
+                FindPw
+
+
+React 컴포넌트 구조
+    App.js
+    │
+    ▼
+    Layout
+    │
+    ├── Header
+    │
+    └── Main 영역
+        │
+        ├── Main
+        │     ├── RecipeCard
+        │     └── RecipeList
+        │
+        ├── Login
+        │
+        ├── FindId
+        │
+        ├── FindPw
+        │
+        └── SearchPage
+                │
+                ├── SearchInput
+                ├── CategoryFilter
+                ├── DifficultyFilter
+                └── RecipeResults
+
+검색 기능 데이터 흐름
+    사용자 입력
+        │
+        ▼
+    Search Input
+        │
+        ▼
+    searchQuery (state)
+        │
+        ▼
+    handleSearch()
+        │
+        ▼
+    filterRecipes()
+        │
+        ▼
+    Filtered Results
+        │
+        ▼
+    React 렌더링
+        │
+        ▼
+    Recipe Card 출력
+
+실제 프로젝트 폴더 아키텍처
+    src
+    │
+    ├── App.js
+    │
+    ├── layout
+    │   └── Layout.js
+    │
+    ├── components
+    │   ├── Header
+    │   ├── Card
+    │   ├── Button
+    │   └── Input
+    │
+    ├── pages
+    │   ├── Main
+    │   ├── Login
+    │   ├── Search
+    │   └── Find
+    │
+    ├── data
+    │   └── recipes.json
+    │
+    ├── styles
+    │   ├── global.css
+    │   └── variables.css
+    │
+    └── utils
+        └── filterRecipes.js
+
+전체 서비스 흐름
+    사용자 접속
+        │
+        ▼
+    React App
+        │
+        ▼
+    Router
+        │
+        ▼
+    Layout
+        │
+        ▼
+    Header + Page
+        │
+        ▼
+    사용자 행동
+    검색 / 로그인
+        │
+        ▼
+    State 변경
+        │
+        ▼
+    UI 업데이트
+
+
+이 프로젝트의 핵심 기능 구조
+    레시피 서비스
+    │
+    ├── 사용자 기능
+    │     ├ 로그인
+    │     ├ 아이디 찾기
+    │     └ 비밀번호 찾기
+    │
+    ├── 검색 기능
+    │     ├ 검색어 입력
+    │     ├ 카테고리 필터
+    │     └ 난이도 필터
+    │
+    └── 데이터
+        ├ 추천 레시피
+        └ 크롤링 데이터
+
+한 줄 정리
+
+프로젝트 구조
+    React SPA
+    + Router
+    + 검색 기능
+    + 데이터 연결
