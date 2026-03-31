@@ -1,4 +1,3 @@
-// src/components/Input/Input.js
 import React from "react";
 import "./Input.css";
 
@@ -9,16 +8,15 @@ function Input({
   onChange,
   placeholder,
   name,
+  className = "",
 }) {
   return (
     <div className="input-wrapper">
 
-      {/* 🔥 label (있을 때만 출력) */}
       {label && <label className="input-label">{label}</label>}
 
-      {/* 🔥 input */}
       <input
-        className="input-field"
+        className={`input-field ${className}`}
         type={type}
         value={value}
         onChange={onChange}
