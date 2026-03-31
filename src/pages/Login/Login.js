@@ -105,8 +105,13 @@ function Login() {
             {pwError && <p className="hint_text">{pwError}</p>}
 
             {/* 로그인 버튼 */}
-            <Button type="submit">로그인</Button>
-
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={!id || !pw}
+            >
+              로그인
+            </Button>
           </form>
 
           {/* footer */}

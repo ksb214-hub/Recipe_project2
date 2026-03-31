@@ -1,19 +1,17 @@
 // src/components/Button/Button.js
 import React from "react";
 import "./Button.css";
-
 function Button({
-  children,      // 버튼 안 글자 (로그인, 검색 등)
+  children,
   type = "button",
-  variant = "primary", // 스타일 종류
-  onClick,
+  variant = "primary",
   disabled = false,
-}) {
+}) 
+{
   return (
     <button
-      type={type}
       className={`btn ${variant}`}
-      onClick={onClick}
+      type={type}
       disabled={disabled}
     >
       {children}

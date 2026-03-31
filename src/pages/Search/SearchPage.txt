@@ -1,233 +1,195 @@
-구조 
-src/
-│
-├── App.js (Router)
-│
-├── Main/
-│   └── Main.js
-│
-├── Login/
-│   ├── Login.js
-│   └── find_id/
-│       └── find_id.js
-│
-├── SearchPage/
-│   ├── SearchPage.js
-│   └── SearchPage.module.css
-       
+SearchPage 설계 문서
 
-목적: 메인 화면에 검색 버튼 클릭시 검색화면을 만드는 것을 목표로 한다.
-사용언어: react를 사용하고 언어는 js를 사용한다.
+1. 개요 (Overview)
+  SearchPage는 사용자가 레시피를 검색할 수 있는 페이지이다.
+  사용자는 검색창에 재료명 또는 요리 이름을 입력하여 레시피를 찾을 수 있다.
+  검색 결과는 Card 컴포넌트를 활용하여 리스트 형태로 출력된다.
 
-전체 흐름도
-    사용자 진입
-        ↓
-    검색어 입력 or 카테고리 선택
-        ↓
-    handleSearch 실행
-        ↓
-    검색 조건 상태 업데이트
-        ↓
-    필터 적용 (카테고리 / 난이도)
-        ↓
-    recipeResults 필터링
-        ↓
-    검색 결과 렌더링
-        ↓
-    사이드바 (인기 레시피 / 최근 검색) 표시
+2. 개발 환경
+    항목		내용
+	Framework	React
+	Language	JavaScript
+	Routing		React Router
+	Component	Input, Button
+	Styling	    CSS
 
 
-기능 중심 흐름 (더 자세한 구조)
-    [초기 화면]
-        ↓
-    추천 레시피 / 기본 리스트 표시
+3. 폴더 구조
+  src/
+  │
+  ├── pages/
+  │   └── Search/
+  │       ├── SearchPage.js
+  │       └── SearchPage.css
+  
+  구성 요소
+		SearchPage.js → 검색 기능 및 UI 구조
+		SearchPage.css → 검색 페이지 스타일
 
-    [사용자 행동]
-        ↓
-    1. 검색 입력
-    2. 카테고리 클릭
-    3. 난이도 선택
+4. SearchPage 목적
+  SearchPage는 다음 기능을 제공한다.
+    레시피 검색
+    검색 결과 출력
+    레시피 카드 표시
 
-        ↓
-    [상태 변경]
-    - searchQuery 변경
-    - selectedCategory 변경
-    - selectedDifficulty 변경
+5. 주요 기능
+  Search 기능
+  │
+  ├── 검색 입력
+  │     └── Input 컴포넌트
+  │
+  ├── 검색 실행
+  │     ├── Enter 키 검색
+  │     └── 버튼 검색
+  │
+  ├── 검색 결과 처리
+  │     └── 레시피 데이터 필터링
+  │
+  └── 검색 결과 출력
+        └── Card 컴포넌트
 
-        ↓
-    [데이터 처리]
-        조건에 맞는 레시피 필터링
+6. UI 구조
+  SearchPage
+  │
+  ├── search_container
+  │
+  ├── search_header
+  │     └── 검색 입력창
+  │
+  └── search_results
+        │
+        └── Card 리스트
 
-        ↓
-    [UI 업데이트]
-    - 검색 결과 리스트 렌더링
-    - 선택된 필터 active 표시
-    - 최근 검색 업데이트
+7. 컴포넌트 구조
+  SearchPage는 다음 컴포넌트로 구성된다.
+    SearchPage
+    │
+    ├── Input (검색창)
+    │
+    ├── Button (검색 실행)
+    │
+    └── Card
+          └── 검색 결과 출력
 
-        ↓
-    [사이드바]
-    - 인기 레시피 표시
-    - 최근 검색 표시
+8. 데이터 흐름
+  SearchPage의 핵심 구조는 검색 데이터 흐름이다.
+    사용자 입력
+        │
+        ▼
+    Input 컴포넌트
+        │
+        ▼
+    useState 저장
+        │
+        ▼
+    검색 실행
+        │
+        ▼
+    데이터 필터링
+        │
+        ▼
+    Card 리스트 출력
 
-핵심 데이터 흐름 
+9. 상태 관리
+  SearchPage에서는 useState를 사용하여 검색 데이터를 관리한다.
 
-    input → state (searchQuery)
-        ↓
-    handleSearch
-        ↓
-    조건 저장 (category, difficulty)
-        ↓
-    filter()
-        ↓
-    recipeResults 변경
-        ↓
-    UI 자동 렌더링
-container
-    css 
-        width: 100%;
-        margin: 0 auto;
-
-
-기능 구조 
-기능
-│
-├── 검색 입력
-│     ├── input → searchQuery state 저장
-│     └── onChange → 실시간 업데이트
-│
-├── 검색 실행
-│     └── handleSearch()
-│           ↓
-│        검색어 기반 필터
-│
-├── 카테고리 필터
-│     ├── 버튼 클릭
-│     └── selectedCategory 변경
-│
-├── 난이도 필터
-│     └── selectedDifficulty 변경
-│
-├── 데이터 처리
-│     recipeResults.filter()
-│
-└── 결과 렌더링
-      ├── 제목
-      ├── 설명
-      └── 정보 (시간, 난이도, 인분)
+  예시
+      const [query, setQuery] = useState("");
+      const [results, setResults] = useState([]);
 
 
-웹 구조 
-div (전체 컨테이너)
-  className = styles.container
+10. 검색 처리 흐름
+  사용자 검색
+      │
+      ▼
+  검색어 입력
+      │
+      ▼
+  검색 실행
+      │
+      ▼
+  레시피 데이터 필터링
+      │
+      ▼
+  검색 결과 생성
+      │
+      ▼
+  Card UI 출력
 
-  1. header (헤더 영역)
-  2. div (검색 영역)
-  3. div (검색 결과 영역)
+11. Card 출력 구조
+  검색 결과는 Card 컴포넌트를 사용하여 출력된다.
+  
+  예시
+    {results.map((recipe) => (
+      <Card
+        key={recipe.id}
+        title={recipe.title}
+        description={recipe.description}
+        time={recipe.time}
+        difficulty={recipe.difficulty}
+        servings={recipe.servings}
+      />
+    ))}
 
-div (전체)
-  className = styles.container
+12. UI 구조 (DOM)
+  SearchPage
+  │
+  ├── div.search_container
+  │
+  ├── div.search_box
+  │     │
+  │     ├── Input
+  │     └── Button
+  │
+  └── div.search_results
+        │
+        └── Card (반복)
 
-  header
-    style
-        background: black;
-        padding: 0 1.5rem;
-        width: 100%;
-        height: 10vh;
+13. 핵심 설계 포인트
+  SearchPage는 다음 설계 원칙을 기반으로 한다.
 
-    nav
-      style
-        padding: 0 24px;
-        display: flex;
-        align-items: center;
+    1️⃣ 컴포넌트 재사용
+      Input
+      Button
+      Card
+      기존 컴포넌트를 재사용한다.
+    
+    2️⃣ 데이터 기반 UI
+      검색 결과 데이터에 따라 UI가 자동으로 변경된다.
 
-      div (inner)
-        style
-          padding: 0 24px;
+    3️⃣ 확장성
+      다음 기능을 추가할 수 있다.
+        재료 기반 검색
+        카테고리 필터
+        정렬 기능
+        추천 레시피
 
-        div (logo)
-          style
-            display: flex;
-            align-items: center;
+14. SearchPage 특징
+  SearchPage는 다음 특징을 가진다.
+    검색 중심 UI
+    Card 기반 결과 출력
+    컴포넌트 재사용
+    데이터 기반 렌더링
+  
+15. 전체 구조 흐름
+  App
+  │
+  ├── Layout
+  │     │
+  │     ├── Header
+  │     │
+  │     └── Page
+  │          │
+  │          ├── Main
+  │          ├── Login
+  │          └── SearchPage
 
-          h1
-            Link (to="/")
-              style
-                color: white;
-                text-decoration: none;
+16. 정리
+  SearchPage는 사용자가 레시피를 검색하고 결과를 확인할 수 있는 페이지이다.
+  이를 통해 다음 기능을 제공한다.
+    레시피 검색
+    결과 카드 출력
+    레시피 탐색 기능 제공
 
-              zero-naeng-fe
-
-  div (검색 영역)
-    className = styles.searchArea
-    style
-      text-align: center;
-      padding: 3rem 0;
-      margin-bottom: 2rem;
-
-    div (아이콘 + 제목)
-      className = styles.titleWrapper
-      style
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        margin-bottom: 1rem;
-        color: black;
-
-      ChefHat 아이콘
-
-      h1
-        style
-          font-size: 2rem;
-          font-weight: 700;
-
-        레시피를 찾아보세요
-
-    form (검색폼)
-      className = styles.searchForm
-
-      div (input 영역)
-        className = styles.searchWrapper
-
-        Search 아이콘
-
-        input
-          type: text
-          value: searchQuery
-          placeholder: 재료나 요리 이름 입력
-
-      button (검색 버튼)
-        className = styles.searchBtn
-        type: submit
-
-        검색
-
-    div (카테고리 영역)
-      className = styles.categoryContainer
-
-      button (카테고리 반복)
-        className = styles.categoryBtn / active
-
-  div (검색 결과 영역)
-
-    조건
-      filteredRecipes.length === 0
-        → "검색 결과 없음"
-
-    반복
-      filteredRecipes.map()
-
-        div (카드)
-          className = styles.resultItem
-
-          h3 → 제목
-          p → 설명
-
-          span → 시간
-          span → 난이도
-          span → 인분  
-
-에러 
-Module not found: Can't resolve 'lucide-react'
-lucide-react라는 아이콘 라이브러리를 import 했는데
-👉 설치가 안 되어 있음
+  한 줄 핵심
+    SearchPage는 “레시피 검색 기능을 제공하는 페이지”

@@ -46,3 +46,19 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
 }
+
+/* 검색 결과 개수 */
+.result-info {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+/* 결과 없음 */
+.no-result {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #999;
+}

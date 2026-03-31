@@ -20,7 +20,7 @@ function SearchPage() {
     },
   ];
 
-  // 🔥 실시간 필터링
+  // 🔍 실시간 필터링
   const filteredRecipes = recipes.filter((recipe) =>
     recipe.title.includes(searchQuery)
   );
@@ -35,26 +35,41 @@ function SearchPage() {
 
         <div className="search-box">
           <Search size={18} />
+
           <input
             type="text"
             placeholder="레시피 검색"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+
         </div>
 
       </div>
 
-      {/* 결과 */}
-      <div className="search-result">
-        {filteredRecipes.map((recipe) => (
-          <Card
-            key={recipe.id}
-            title={recipe.title}
-            image={recipe.image}
-          />
-        ))}
-      </div>
+      {/* 🔥 검색어 있을 때만 표시 */}
+      {searchQuery && (
+        <div className="result-info">
+          "{searchQuery}" 검색 결과 {filteredRecipes.length}개
+        </div>
+      )}
+
+      {/* 🔥 결과 없을 때 UI */}
+      {searchQuery && filteredRecipes.length === 0 ? (
+        <div className="no-result">
+          검색 결과가 없습니다 😢
+        </div>
+      ) : (
+        <div className="search-result">
+          {filteredRecipes.map((recipe) => (
+            <Card
+              key={recipe.id}
+              title={recipe.title}
+              image={recipe.image}
+            />
+          ))}
+        </div>
+      )}
 
     </div>
   );
