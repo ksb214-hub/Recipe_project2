@@ -1,10 +1,18 @@
 // src/pages/Main/Main.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Main.css";
 import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 
 function Main() {
-  // 🔥 더미 데이터 (나중에 data/recipes.js로 분리 가능)
+
+  const navigate = useNavigate();
+
+  const goRegPage = () => {
+    navigate("/reg");
+  };
+
   const recipes = [
     {
       id: 1,
@@ -27,10 +35,14 @@ function Main() {
     <main className="con">
       <div className="home_cont_cate">
 
-        {/* 타이틀 */}
-        <h3>
-          <a href="#">BEST 요리모음</a>
-        </h3>
+        {/* 🔥 제목 + 버튼 */}
+        <div className="section-header">
+          <h3>BEST 요리모음</h3>
+
+          <Button onClick={goRegPage}>
+            + 재료 등록
+          </Button>
+        </div>
 
         {/* 카드 리스트 */}
         <div className="card-wrapper">

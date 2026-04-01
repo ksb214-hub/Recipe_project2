@@ -7,7 +7,7 @@ SearchPage 설계 문서
 
 2. 개발 환경
     항목		내용
-	Framework	React
+  Framework	React
 	Language	JavaScript
 	Routing		React Router
 	Component	Input, Button
